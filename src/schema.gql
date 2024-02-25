@@ -1,0 +1,96 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  """Unique User Identifier"""
+  id: String!
+
+  """User Name"""
+  name: String!
+
+  """User Last Name"""
+  lastName: String
+
+  """Calculated User Full Name"""
+  fullName: String
+
+  """User Email"""
+  email: String!
+
+  """User Password"""
+  password: String!
+
+  """User Profile Picture"""
+  profilePicture: String
+  campaigns: [Campaign]!
+}
+
+type Campaign {
+  """Unique Campaign Identifier"""
+  id: String!
+
+  """Unique Identifier of the Campaign Creator User"""
+  user_id: String!
+
+  """Campaign Creator User"""
+  user: User!
+
+  """Campaign Title"""
+  title: String!
+
+  """Campaign Description"""
+  description: String!
+
+  """Campaign Banner Picture"""
+  bannerImage: String
+}
+
+type Query {
+  """Get User by ID"""
+  getUserByID(
+    """User ID param"""
+    id: String!
+  ): User
+
+  """Get Users"""
+  getUsers: [User!]
+
+  """Get Campaign by ID"""
+  getCampaignByID(
+    """Campaign ID param"""
+    id: String!
+  ): Campaign
+
+  """Get Campaigns"""
+  getCampaigns: [Campaign!]
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput!): User!
+  createCampaign(createCampaignInput: CreateCampaignInput!): Campaign!
+}
+
+input CreateUserInput {
+  """User Name"""
+  name: String!
+
+  """User Last Name"""
+  lastName: String
+
+  """User Email"""
+  email: String!
+
+  """User Password"""
+  password: String!
+
+  """User Profile Picture"""
+  profilePicture: String
+}
+
+input CreateCampaignInput {
+  user_id: String!
+  title: String! = ""
+  description: String! = ""
+  bannerImage: String = null
+}
