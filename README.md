@@ -71,3 +71,44 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+##
+
+User :
+  - nome 
+	- sobrenome
+	- email
+  - senha	
+  - foto?	
+    - avatar? :		
+      - gênero		
+      - pessoa
+		  - pose		
+      - cor da pele	
+      - localização (avaliar melhor forma de estruturar esse dado)
+	- campanhas ( Campaigns )
+	- favoritos ( Campaigns )
+	- histórico ( Campaigns )
+	- notificações? : ( nao necessario inicialmente, estudar implementaçao )
+  
+———————————//——————————//———————————
+
+Campaign :
+  - verificado? : ( analizar utilidade )
+	- criador ( User )
+	- tipo ( doação, petição )
+  - meta de ganhos ( fundos, assinaturas )
+	- ganhos totais ( fundos, assinaturas )
+	- titulo
+	- baner
+	- descrição	
+  - doações :
+		- criador ( User )
+		- valor ( fundos, assinatura )							
+		- data de criação
+		- mensagem
+	- likes
+	- views
+	- localização
+	- categorias? : ( analizar dificuldade x benefícios )
+	- roadmap? : ( analizar como funcionaria exatamente )
